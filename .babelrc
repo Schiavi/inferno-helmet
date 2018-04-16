@@ -1,15 +1,56 @@
 {
-  "plugins": [
-    "inferno",
-    "transform-class-properties",
-    [
-      "transform-object-rest-spread",
-      {
-        "useBuiltIns": true
-      }
+    "env": {
+        "commonjs": {
+            "presets": [
+                ["env", {
+                    "targets": {
+                        "browsers": ["last 1 versions", "ie >= 10"]
+                    },
+                    "modules": "commonjs",
+                    "loose": true,
+                    "useBuiltIns": true
+                }]
+            ],
+            "plugins": [
+                "inferno",
+                "transform-export-extensions",
+                "transform-class-properties",
+                "transform-object-rest-spread",
+                "transform-remove-strict-mode"
+            ]
+        },
+        "test": {
+            "plugins": [
+                ["istanbul", {
+                    "exclude": [
+                        "**/node_modules/**",
+                        "**/packages/**",
+                        "**/test/**",
+                        "**/Test*"
+                    ]
+                }],
+                "transform-export-extensions",
+                "transform-class-properties",
+                "transform-object-rest-spread",
+                "transform-remove-strict-mode"
+            ]
+        }
+    },
+    "presets": [
+        ["env", {
+            "targets": {
+                "browsers": ["last 1 versions", "ie >= 10"]
+            },
+            "modules": false,
+            "loose": true,
+            "useBuiltIns": true
+        }]
+    ],
+    "plugins": [
+        "inferno",
+        "transform-export-extensions",
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-remove-strict-mode"
     ]
-  ],
-  "presets": [
-    "es2015"
-  ]
 }
