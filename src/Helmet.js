@@ -1,4 +1,8 @@
-import {Component as InfernoComponent} from "inferno";
+﻿import {
+    Component as InfernoComponent,
+    createComponentVNode, // eslint-disable-line
+    normalizeProps // eslint-disable-line
+} from "inferno";
 import {isArray} from "inferno-shared";
 import withSideEffect from "inferno-side-effect";
 import deepEqual from "deep-equal";
